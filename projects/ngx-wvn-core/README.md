@@ -42,5 +42,5 @@ this.authenticationService.user.subscribe(user => {
 ## Getting started
 Install NPM dependency by using this command:
 ````
-npm install -s wavenet-be/ngx-wvn-core
+npm install -s @wavenet/ngx-wvn-core
 ````
