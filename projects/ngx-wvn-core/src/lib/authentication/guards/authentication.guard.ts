@@ -19,7 +19,7 @@ export class AuthenticationGuard implements CanLoad, CanActivate {
   }
 
   private checkActivate(route: Route | ActivatedRouteSnapshot, state?: RouterStateSnapshot): boolean | undefined {
-    if (this.roleService.isAuthenticated()) {
+    if (!this.roleService.isAuthenticated()) {
       if (state) {
         this.router.navigate([this.roleService.redirectUrl], {queryParams: {returnUrl: state.url}});
       } else {

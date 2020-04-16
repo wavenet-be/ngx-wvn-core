@@ -3,4 +3,5 @@
  */
 export * from './lib/authentication/services/authentication.service';
 export * from './lib/authentication/guards/authentication.guard';
+export * from './lib/authentication/models/user.model';
 export * from './lib/ngx-wvn-core.module';

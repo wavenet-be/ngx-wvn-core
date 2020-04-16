@@ -1,24 +1,46 @@
-# NgxWvnCore
+# ngx-wvn-core
+Wavenet core library for Angular application.
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+## Features
 
-## Code scaffolding
+### Demo
+A demo application is available on [GitHub](https://github.com/wavenet-be/wvn-angular-demo).
 
-Run `ng generate component component-name --project ngx-wvn-core` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-wvn-core`.
-> Note: Don't forget to add `--project ngx-wvn-core` or else it will be added to the default project in your `angular.json` file. 
+### Authentication
+#### Role-based route access validation
+In order to protect a certain route of your application, you can use the `AuthenticationGuard`. Go to your routing module and edit the route as follow:  
+```
+{
+    path: 'path-of-you-component',
+    component: ComponentClassName,
+    canLoad: [AuthenticationGuard],
+    canActivate: [AuthenticationGuard],
+    data: {
+      roles: ['FIRST_ALLOWED_ROLE','SECOND_ALLOWED_ROLE']
+    }
+  }
+```
 
-## Build
+You have to provide the current user to the `AuthenticationService` to make it work. Here is an example:
+```
+this.authenticationService.user.next({
+    roles: ['TEST_ROLE']
+});
+``` 
 
-Run `ng build ngx-wvn-core` to build the project. The build artifacts will be stored in the `dist/` directory.
+To retrieve the current user, use the service as follow:
+```
+this.authenticationService.user.subscribe(user => {
+  if(user == null){
+    console.log('anonymous');
+  }else{
+    console.log('logged');
+  }
+});
+``` 
 
-## Publishing
-
-After building your library with `ng build ngx-wvn-core`, go to the dist folder `cd dist/ngx-wvn-core` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-wvn-core` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Getting started
+Install NPM dependency by using this command:
+````
+npm install -s wavenet-be/ngx-wvn-core
+````
