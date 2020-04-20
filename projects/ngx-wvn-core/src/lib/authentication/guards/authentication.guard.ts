@@ -1,11 +1,19 @@
 import {Injectable} from '@angular/core';
-import {ActivatedRouteSnapshot, CanActivate, CanLoad, Route, Router, RouterStateSnapshot} from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  CanActivateChild,
+  CanLoad,
+  Route,
+  Router,
+  RouterStateSnapshot
+} from '@angular/router';
 import {AuthenticationService} from "../services/authentication.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationGuard implements CanLoad, CanActivate {
+export class AuthenticationGuard implements CanLoad, CanActivate, CanActivateChild {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     return this.checkActivate(route, state);
@@ -15,33 +23,41 @@ export class AuthenticationGuard implements CanLoad, CanActivate {
     return this.checkActivate(route);
   }
 
-  constructor(private roleService: AuthenticationService, private router: Router) {
+  constructor(private authenticationService: AuthenticationService, private router: Router) {
+  }
+
+  canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | import("@angular/router").UrlTree | import("rxjs").Observable<boolean | import("@angular/router").UrlTree> | Promise<boolean | import("@angular/router").UrlTree> {
+    return this.validateAuthenticationRequirement(state, childRoute);
   }
 
   private checkActivate(route: Route | ActivatedRouteSnapshot, state?: RouterStateSnapshot): boolean | undefined {
-    if (!this.roleService.isAuthenticated()) {
-      if (state) {
-        this.router.navigate([this.roleService.redirectUrl], {queryParams: {returnUrl: state.url}});
-      } else {
-        this.router.navigate([this.roleService.redirectUrl]);
-      }
+    return this.validateAuthenticationRequirement(state, route);
+  }
+
+  private validateAuthenticationRequirement(state: RouterStateSnapshot, route: Route | ActivatedRouteSnapshot) {
+    if (!this.authenticationService.isAuthenticated()) {
+      this.redirect(this.authenticationService.loginRedirectUrl, state);
       return false;
     }
-    if (!route.data) {
+    if (!route.data || !route.data.roles || this.authenticationService.hasAnyRole(route.data.roles)) {
       return true;
     }
-    if (route.data.roles) {
-      const expectedRoles: string[] = route.data.roles;
-      if (this.roleService.hasAnyRole(expectedRoles)) {
-        return true;
-      }
-    } else {
-      return true;
-    }
+    this.redirectForbidden(route, state);
+    return false;
+  }
+
+  private redirectForbidden(route: Route | ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (route.data.redirectTo) {
-      this.router.navigate([route.data.redirectTo]);
+      this.redirect(route.data.redirectTo, state);
+    }
+    this.redirect(this.authenticationService.forbiddenRedirectUrl, state);
+  }
+
+  private redirect(redirectUrl: string, state?: RouterStateSnapshot) {
+    if (state) {
+      this.router.navigate([redirectUrl], {queryParams: {returnUrl: state.url}});
     } else {
-      this.router.navigate(['/']);
+      this.router.navigate([redirectUrl]);
     }
   }
 }

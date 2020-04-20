@@ -39,6 +39,12 @@ this.authenticationService.user.subscribe(user => {
 });
 ``` 
 
+To configure the redirection urls (login required and forbidden access), simply change the values of the service at application startup:
+```
+this.authenticationService.loginRedirectUrl='/my/login/page';
+this.authenticationService.forbiddenRedirectUrl='/my/forbidden/page';
+```
+
 ## Getting started
 Install NPM dependency by using this command:
 ````

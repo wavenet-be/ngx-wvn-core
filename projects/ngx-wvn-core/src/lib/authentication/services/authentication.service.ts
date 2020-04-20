@@ -7,7 +7,8 @@ import {User} from "../models/user.model";
 })
 export class AuthenticationService {
 
-  redirectUrl: string = '/account/login';
+  loginRedirectUrl: string = '/login';
+  forbiddenRedirectUrl: string = '/forbidden';
 
   user: BehaviorSubject<User> = new BehaviorSubject<User>(null);
 
@@ -16,14 +17,14 @@ export class AuthenticationService {
   };
 
   hasAnyRole(roles: Array<string>) {
-    return this.user.value.roles && roles.some(r => this.hasRole(r));
+    return this.user.value && this.user.value.roles && roles.some(r => this.hasRole(r));
   }
 
   hasRole(role: string) {
     return this.user.value && this.user.value.roles.indexOf(role) != -1;
   }
 
-  clear(){
+  clear() {
     this.user.next(null);
   }
 }
