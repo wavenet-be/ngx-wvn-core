@@ -24,8 +24,12 @@ In order to protect a certain route of your application, you can use the `Authen
 You have to provide the current user to the `AuthenticationService` at startup or login phase of your application. Here is an example:
 ```
 this.authenticationService.user.next({
-    roles: ['TEST_ROLE']
-});
+  userId: 'j.doe',
+  roles: ['TEST_ROLE'],
+  email: 'j.doe@domain.tld',
+  firstName: 'John',
+  lastName: 'Doe'
+})
 ``` 
 
 To retrieve the current user, use the service as follow:
