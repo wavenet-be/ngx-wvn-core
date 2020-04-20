@@ -21,7 +21,7 @@ In order to protect a certain route of your application, you can use the `Authen
   }
 ```
 
-You have to provide the current user to the `AuthenticationService` to make it work. Here is an example:
+You have to provide the current user to the `AuthenticationService` at startup or login phase of your application. Here is an example:
 ```
 this.authenticationService.user.next({
     roles: ['TEST_ROLE']
@@ -37,6 +37,11 @@ this.authenticationService.user.subscribe(user => {
     console.log('logged');
   }
 });
+``` 
+
+To clear the current user, use the service as follow:
+```
+this.authenticationService.clear();
 ``` 
 
 To configure the redirection urls (login required and forbidden access), simply change the values of the service at application startup:
