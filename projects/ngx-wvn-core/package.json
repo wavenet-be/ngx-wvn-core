@@ -17,6 +17,9 @@
     "core"
   ],
   "license": "LGPL-3.0",
+  "scripts": {
+    "doc": "npx compodoc -p tsconfig.lib.json -d ../../docs --includes src/lib"
+  },
   "peerDependencies": {
     "@angular/common": ">=9.1.1",
     "@angular/core": ">=9.1.1",

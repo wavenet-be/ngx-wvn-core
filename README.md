@@ -14,6 +14,13 @@ Run `ng generate component component-name --project ngx-wvn-core` to generate a 
 
 Run `ng build ngx-wvn-core` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+### Documentation
+To generate the documentation, go into the folder `projects/ngx-wvn-core` and type this command: 
+```
+npm run doc
+``` 
+The website is then available in the `/docs` folder.
+
 ### Publishing
 
 After building your library with `ng build ngx-wvn-core`, go to the dist folder `cd dist/ngx-wvn-core` and run `npm publish`.

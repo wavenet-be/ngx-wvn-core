@@ -48,6 +48,9 @@
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
         <li >
+            <a href="#readme" role="tab" id="readme-tab" data-toggle="tab" data-link="readme">README</a>
+        </li>
+        <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
@@ -754,6 +757,18 @@
 </section>
         </div>
 
+        <div class="tab-pane fade " id="c-readme">
+            <p><p>To protect a certain route of your application, you can use the <code>AuthenticationGuard</code>. Go to your routing module and edit the route as follow:  </p>
+<div><pre class="line-numbers"><code class="language-none">{
+    path: &#39;path-of-you-component&#39;,
+    component: ComponentClassName,
+    canLoad: [AuthenticationGuard],
+    canActivate: [AuthenticationGuard],
+    data: {
+      roles: [&#39;FIRST_ALLOWED_ROLE&#39;,&#39;SECOND_ALLOWED_ROLE&#39;]
+    }
+  }</code></pre></div></p>
+        </div>
 
         <div class="tab-pane fade  tab-source-code" id="c-source">
             <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;

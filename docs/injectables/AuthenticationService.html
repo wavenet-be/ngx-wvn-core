@@ -46,6 +46,9 @@
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
         <li >
+            <a href="#readme" role="tab" id="readme-tab" data-toggle="tab" data-link="readme">README</a>
+        </li>
+        <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
@@ -147,14 +150,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/lib/authentication/services/authentication.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/lib/authentication/services/authentication.service.ts:53</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Clear the current logged user if any</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -186,14 +191,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/lib/authentication/services/authentication.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/lib/authentication/services/authentication.service.ts:37</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Check if a user has a any of given roles</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -203,6 +210,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -217,6 +225,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>the roles to test</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -224,11 +236,12 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>true if the user has any of the given roles</p>
+
                     </div>
                 </td>
             </tr>
@@ -256,14 +269,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/lib/authentication/services/authentication.service.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/lib/authentication/services/authentication.service.ts:46</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Check if a user has a given role</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -273,6 +288,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -287,6 +303,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>the role to test</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -298,7 +318,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>true if the user has the given role</p>
+
                     </div>
                 </td>
             </tr>
@@ -326,17 +347,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/lib/authentication/services/authentication.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/lib/authentication/services/authentication.service.ts:28</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Check if the user is authenticated</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>true if the user is authenticated</p>
 
                     </div>
                 </td>
@@ -374,10 +403,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/lib/authentication/services/authentication.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/lib/authentication/services/authentication.service.ts:17</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Url used to redirect the user when forbidden (missing role)</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -406,10 +441,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/lib/authentication/services/authentication.service.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/lib/authentication/services/authentication.service.ts:13</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Url used to redirect the user when not authenticated</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -438,10 +479,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/lib/authentication/services/authentication.service.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/lib/authentication/services/authentication.service.ts:22</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Logged user</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -449,6 +496,26 @@
 
     </div>
 
+    <div class="tab-pane fade " id="c-readme">
+        <p><p>You have to provide the current user at startup or login phase of your application. Here is an example:</p>
+<div><pre class="line-numbers"><code class="language-none">this.authenticationService.user.next({
+  userId: &#39;j.doe&#39;,
+  roles: [&#39;TEST_ROLE&#39;],
+  email: &#39;j.doe&#64;domain.tld&#39;,
+  firstName: &#39;John&#39;,
+  lastName: &#39;Doe&#39;
+})</code></pre></div><p>To retrieve the current user, use the service as follow:</p>
+<div><pre class="line-numbers"><code class="language-none">this.authenticationService.user.subscribe(user =&gt; {
+  if(user == null){
+    console.log(&#39;anonymous&#39;);
+  }else{
+    console.log(&#39;logged&#39;);
+  }
+});</code></pre></div><p>To clear the current user, use the service as follow:</p>
+<div><pre class="line-numbers"><code class="language-none">this.authenticationService.clear();</code></pre></div><p>To configure the redirection urls (login required and forbidden access), simply change the values of the service at application startup:</p>
+<div><pre class="line-numbers"><code class="language-none">this.authenticationService.loginRedirectUrl=&#39;/my/login/page&#39;;
+this.authenticationService.forbiddenRedirectUrl=&#39;/my/forbidden/page&#39;;</code></pre></div></p>
+    </div>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &quot;@angular/core&quot;;
@@ -460,24 +527,50 @@ import {User} from &quot;../models/user.model&quot;;
 })
 export class AuthenticationService {
 
+  /**
+   * Url used to redirect the user when not authenticated
+   */
   loginRedirectUrl: string &#x3D; &#x27;/login&#x27;;
+  /**
+   * Url used to redirect the user when forbidden (missing role)
+   */
   forbiddenRedirectUrl: string &#x3D; &#x27;/forbidden&#x27;;
 
+  /**
+   * Logged user
+   */
   user: BehaviorSubject&lt;User&gt; &#x3D; new BehaviorSubject&lt;User&gt;(null);
 
+  /**
+   * Check if the user is authenticated
+   * @return true if the user is authenticated
+   */
   isAuthenticated(): boolean {
     return this.user.value !&#x3D; null;
   };
 
-  hasAnyRole(roles: Array&lt;string&gt;) {
+  /**
+   * Check if a user has a any of given roles
+   * @param roles the roles to test
+   * @return true if the user has any of the given roles
+   */
+  hasAnyRole(roles: Array&lt;string&gt;) : boolean{
     return this.user.value &amp;&amp; this.user.value.roles &amp;&amp; roles.some(r &#x3D;&gt; this.hasRole(r));
   }
 
-  hasRole(role: string) {
+  /**
+   * Check if a user has a given role
+   * @param role the role to test
+   * @return true if the user has the given role
+   */
+  hasRole(role: string) : boolean{
     return this.user.value &amp;&amp; this.user.value.roles.indexOf(role) !&#x3D; -1;
   }
 
-  clear() {
+  /**
+   * Clear the current logged user if any
+   */
+  clear():void{
     this.user.next(null);
   }
 }
