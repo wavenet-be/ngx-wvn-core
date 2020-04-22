@@ -1,11 +1,13 @@
 # ngx-wvn-core
 Wavenet core library for Angular application.
 
+## Documentation
+A documentation website is available [here](https://wavenet-be.github.io/ngx-wvn-core).
+
+## Demo
+A demo application is available [here](https://github.com/wavenet-be/wvn-angular-demo).
+
 ## Features
-
-### Demo
-A demo application is available on [GitHub](https://github.com/wavenet-be/wvn-angular-demo).
-
 ### Authentication
 #### Role-based route access validation
 In order to protect a certain route of your application, you can use the `AuthenticationGuard`. Go to your routing module and edit the route as follow:  

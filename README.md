@@ -1,8 +1,8 @@
 # ngx-wvn-core
 Wavenet core library for Angular application.
 
-## Documentation
-see [this README](projects/ngx-wvn-core/README.md).
+## Feature
+See [this README](projects/ngx-wvn-core/README.md) for functional documentation.
 
 ## Contribution
 ### Code scaffolding
