@@ -15,25 +15,46 @@ import {AuthenticationService} from "../services/authentication.service";
 })
 export class AuthenticationGuard implements CanLoad, CanActivate, CanActivateChild {
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    return this.checkActivate(route, state);
-  }
-
-  canLoad(route: Route): boolean {
-    return this.checkActivate(route);
-  }
-
+  /**
+   * Create a new authentication guard
+   * @param authenticationService service providing current user identity
+   * @param router
+   */
   constructor(private authenticationService: AuthenticationService, private router: Router) {
+
   }
 
+  /**
+   * Returns true if the route is not protected or if the user is logged and has required role(s)
+   * @param route
+   * @param state
+   */
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    return this.validateAuthenticationRequirement(state, route);
+  }
+
+  /**
+   * Returns true if the route is not protected or if the user is logged and has required role(s)
+   * @param route
+   */
+  canLoad(route: Route): boolean {
+    return this.validateAuthenticationRequirement(undefined, route);
+  }
+
+  /**
+   * Returns true if the route is not protected or if the user is logged and has required role(s)
+   * @param childRoute
+   * @param state
+   */
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | import("@angular/router").UrlTree | import("rxjs").Observable<boolean | import("@angular/router").UrlTree> | Promise<boolean | import("@angular/router").UrlTree> {
     return this.validateAuthenticationRequirement(state, childRoute);
   }
 
-  private checkActivate(route: Route | ActivatedRouteSnapshot, state?: RouterStateSnapshot): boolean | undefined {
-    return this.validateAuthenticationRequirement(state, route);
-  }
-
+  /**
+   * Validate security requirements regarding authenticated user and route configuration
+   * @param state
+   * @param route
+   */
   private validateAuthenticationRequirement(state: RouterStateSnapshot, route: Route | ActivatedRouteSnapshot) {
     if (!this.authenticationService.isAuthenticated()) {
       this.redirect(this.authenticationService.loginRedirectUrl, state);
@@ -46,6 +67,11 @@ export class AuthenticationGuard implements CanLoad, CanActivate, CanActivateChi
     return false;
   }
 
+  /**
+   * Redirect in case the user is forbidden
+   * @param route
+   * @param state
+   */
   private redirectForbidden(route: Route | ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (route.data.redirectTo) {
       this.redirect(route.data.redirectTo, state);
@@ -53,6 +79,11 @@ export class AuthenticationGuard implements CanLoad, CanActivate, CanActivateChi
     this.redirect(this.authenticationService.forbiddenRedirectUrl, state);
   }
 
+  /**
+   * Redirect the user to the given url
+   * @param redirectUrl url of the page to which redirect the user
+   * @param state
+   */
   private redirect(redirectUrl: string, state?: RouterStateSnapshot) {
     if (state) {
       this.router.navigate([redirectUrl], {queryParams: {returnUrl: state.url}});

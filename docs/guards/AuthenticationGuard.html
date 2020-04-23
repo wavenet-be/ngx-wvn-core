@@ -92,10 +92,6 @@
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#checkActivate">checkActivate</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
                                 <a href="#redirect">redirect</a>
                             </li>
                             <li>
@@ -129,12 +125,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:16</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Create a new authentication guard</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -143,6 +141,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -157,6 +156,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>service providing current user identity</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -169,6 +172,8 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -206,14 +211,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Returns true if the route is not protected or if the user is logged and has required role(s)</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -288,14 +295,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:49</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Returns true if the route is not protected or if the user is logged and has required role(s)</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -370,14 +379,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:40</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Returns true if the route is not protected or if the user is logged and has required role(s)</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -422,90 +433,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="checkActivate"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            checkActivate
-                        </b>
-                        <a href="#checkActivate"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>checkActivate(route: Route | ActivatedRouteSnapshot, state?: <a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank">RouterStateSnapshot</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:33</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>route</td>
-                                    <td>
-                                            <code>Route | ActivatedRouteSnapshot</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>state</td>
-                                    <td>
-                                                <code><a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank" >RouterStateSnapshot</a></code>
-                                    </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>boolean | undefined</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="redirect"></a>
                     <span class="name">
                         <b>
@@ -526,14 +453,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:87</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Redirect the user to the given url</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -543,6 +472,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -557,6 +487,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>url of the page to which redirect the user</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>state</td>
@@ -569,6 +503,8 @@
                                     </td>
 
 
+                                    <td>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -610,14 +546,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:75</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Redirect in case the user is forbidden</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -694,14 +632,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/lib/authentication/guards/authentication.guard.ts:58</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Validate security requirements regarding authenticated user and route configuration</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -788,25 +728,46 @@ import {AuthenticationService} from &quot;../services/authentication.service&quo
 })
 export class AuthenticationGuard implements CanLoad, CanActivate, CanActivateChild {
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    return this.checkActivate(route, state);
-  }
-
-  canLoad(route: Route): boolean {
-    return this.checkActivate(route);
-  }
-
+  /**
+   * Create a new authentication guard
+   * @param authenticationService service providing current user identity
+   * @param router
+   */
   constructor(private authenticationService: AuthenticationService, private router: Router) {
+
   }
 
+  /**
+   * Returns true if the route is not protected or if the user is logged and has required role(s)
+   * @param route
+   * @param state
+   */
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    return this.validateAuthenticationRequirement(state, route);
+  }
+
+  /**
+   * Returns true if the route is not protected or if the user is logged and has required role(s)
+   * @param route
+   */
+  canLoad(route: Route): boolean {
+    return this.validateAuthenticationRequirement(undefined, route);
+  }
+
+  /**
+   * Returns true if the route is not protected or if the user is logged and has required role(s)
+   * @param childRoute
+   * @param state
+   */
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | import(&quot;@angular/router&quot;).UrlTree | import(&quot;rxjs&quot;).Observable&lt;boolean | import(&quot;@angular/router&quot;).UrlTree&gt; | Promise&lt;boolean | import(&quot;@angular/router&quot;).UrlTree&gt; {
     return this.validateAuthenticationRequirement(state, childRoute);
   }
 
-  private checkActivate(route: Route | ActivatedRouteSnapshot, state?: RouterStateSnapshot): boolean | undefined {
-    return this.validateAuthenticationRequirement(state, route);
-  }
-
+  /**
+   * Validate security requirements regarding authenticated user and route configuration
+   * @param state
+   * @param route
+   */
   private validateAuthenticationRequirement(state: RouterStateSnapshot, route: Route | ActivatedRouteSnapshot) {
     if (!this.authenticationService.isAuthenticated()) {
       this.redirect(this.authenticationService.loginRedirectUrl, state);
@@ -819,6 +780,11 @@ export class AuthenticationGuard implements CanLoad, CanActivate, CanActivateChi
     return false;
   }
 
+  /**
+   * Redirect in case the user is forbidden
+   * @param route
+   * @param state
+   */
   private redirectForbidden(route: Route | ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (route.data.redirectTo) {
       this.redirect(route.data.redirectTo, state);
@@ -826,6 +792,11 @@ export class AuthenticationGuard implements CanLoad, CanActivate, CanActivateChi
     this.redirect(this.authenticationService.forbiddenRedirectUrl, state);
   }
 
+  /**
+   * Redirect the user to the given url
+   * @param redirectUrl url of the page to which redirect the user
+   * @param state
+   */
   private redirect(redirectUrl: string, state?: RouterStateSnapshot) {
     if (state) {
       this.router.navigate([redirectUrl], {queryParams: {returnUrl: state.url}});
