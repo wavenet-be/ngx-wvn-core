@@ -6,5 +6,9 @@
   {
     "title": "Date",
     "file": "date/documentation.md"
+  },
+  {
+    "title": "Title",
+    "file": "title/documentation.md"
   }
 ]

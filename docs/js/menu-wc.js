@@ -55,6 +55,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <li class="link ">
                                         <a href="additional-documentation/date.html" data-type="entity-link" data-context-id="additional">Date</a>
                                     </li>
+                                    <li class="link ">
+                                        <a href="additional-documentation/title.html" data-type="entity-link" data-context-id="additional">Title</a>
+                                    </li>
                         </ul>
                     </li>
                     <li class="chapter modules">
@@ -82,6 +85,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
                                     <a href="injectables/AuthenticationService.html" data-type="entity-link">AuthenticationService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/PageTitleService.html" data-type="entity-link">PageTitleService</a>
                                 </li>
                             </ul>
                         </li>
